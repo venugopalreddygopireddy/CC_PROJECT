@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+class StudentMarksProject {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int marks[] = new int[5];
+        int choice;
+
+        do {
+            System.out.println("\n Enter Your Choice \n1.Enter Marks\n2.Display Marks\n3.Total\n4.Average\n5.Highest\n6.Exit");
+            choice = sc.nextInt();
+
+            switch(choice) {
+                case 1:
+                    for(int i=0;i<5;i++)
+                        marks[i] = sc.nextInt();
+                    break;
+                case 2:
+                    for(int i=0;i<5;i++)
+                        System.out.print(marks[i] + " ");
+                    break;
+
+                case 3:
+                    int sum = 0;
+                    for(int i=0;i<5;i++)
+                        sum += marks[i];
+                    System.out.println(sum);
+                    break;
+
+                case 4:
+                    int total = 0;
+                    for(int i=0;i<5;i++)
+                        total += marks[i];
+                    System.out.println(total/5.0);
+                    break;
+
+                case 5:
+                    int max = marks[0];
+                    for(int i=1;i<5;i++)
+                        if(marks[i] > max)
+                            max = marks[i];
+                    System.out.println(max);
+                    break;
+
+                case 6:
+                    break;
+
+                default:
+                    System.out.println("Invalid choice");
+            }
+        } while(choice != 6);
+    }
+}
